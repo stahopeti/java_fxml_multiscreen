@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015.07.25., 14:38:48
+    Author     : Lajos
+*/
+
+.root{
+    
+    -fx-background-image: url("background-middle.png");
+}
+
+.cim{
+    
+    -fx-font-size: 25px;
+    -fx-font-family: "Arial";
+    -fx-fill: #FFFFFF;
+    
+}
+
+.label{
+    
+    -fx-font-size: 20px;
+    -fx-font-fill: "white";
+    -fx-font-family: "Arial";
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.button{
+    
+    -fx-text-fill: rgb(0,0,0);
+    -fx-border-color: rgb(255,255,255);
+    
+    
+}
