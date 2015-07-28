@@ -19,6 +19,15 @@ public class AlterDataScreenController implements Initializable, setParent {
 
     ManagingScreens myController;
     
+    String placeOfBirth;
+    String city;
+    String address;
+    String emailAddress;
+    int yearOfBirth;
+    int phoneNumber;
+    int postalNumber;
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -48,5 +57,13 @@ public class AlterDataScreenController implements Initializable, setParent {
     
     }
     
+    private void alterData(){
+    
+        DBConnection connect = new DBConnection();
+//        connect.alterData();
+        
+        
+    
+    }
     
 }

@@ -76,6 +76,32 @@ public class DBConnection {
     
     }
     
+    
+    public void alterData(String placeOfBirth, String city, String address,
+            String emailAddress, int yearOfBirth, int phoneNumber, int postalNumber){
+    
+    try{
+    
+        rt = null;
+        String query = "UPDATE  player_information"
+                + "SET placeOfBirth = '"+placeOfBirth+"', city ='" +city + "',"
+                + "address ='"+ address+"', emailAddress = '" + emailAddress+"',"
+                + "yearOfBirth ="+yearOfBirth+",phoneNumber ="+phoneNumber+","
+                + "postalNumber = "+postalNumber;
+        
+        st.executeUpdate(query);
+        
+        
+    }catch(Exception ex){
+    
+        System.out.println(ex);
+        
+    
+    }
+        
+    
+    }
+    
     public boolean checkPlayerName(String name, String pw){
     
         boolean valid_data=false;
@@ -83,7 +109,7 @@ public class DBConnection {
     try{
     
         rt = null;    
-        String query = "SELECT password FROM othello_db WHERE name LIKE "+name;
+        String query = "SELECT password FROM player_information WHERE name LIKE '" + name + "' AND password LIKE '" + pw + "'";
         rt = st.executeQuery(query);
         if(rt!=null){
             valid_data = true;
