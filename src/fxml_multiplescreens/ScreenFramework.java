@@ -14,6 +14,7 @@ import javafx.stage.Stage;
  *
  * @author Lajos
  */
+
 public class ScreenFramework extends Application {
     
     public static String screen1ID = "bejelentkező";
@@ -48,6 +49,7 @@ public class ScreenFramework extends Application {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         launch(args);
     }

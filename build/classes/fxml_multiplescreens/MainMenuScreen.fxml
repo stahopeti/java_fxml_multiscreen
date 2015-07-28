@@ -8,61 +8,80 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_multiplescreens.MainMenuScreenController">
   <tabs>
     <Tab text="Bejelentkezés">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="root" stylesheets="@Login.css">
                <children>
-                  <Text layoutX="219.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bejelentkezés">
+                  <Text layoutX="322.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bejelentkezés">
                      <font>
                         <Font name="Arial" size="25.0" />
                      </font>
                   </Text>
-                  <Label layoutX="128.0" layoutY="129.0" text="Felhasználónév:">
+                  <Label layoutX="249.0" layoutY="129.0" text="Felhasználónév:">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="128.0" layoutY="169.0" text="Jelszó:">
+                  <Label layoutX="249.0" layoutY="169.0" text="Jelszó:">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="300.0" layoutY="127.0" />
-                  <TextField layoutX="300.0" layoutY="167.0" />
+                  <TextField layoutX="403.0" layoutY="128.0" />
+                  <TextField layoutX="403.0" layoutY="168.0" />
+                  <Button layoutX="433.0" layoutY="216.0" mnemonicParsing="false" text="Bejelentkezés" />
                </children></AnchorPane>
       </content>
     </Tab>
     <Tab text="Adatmódosítás">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="root" stylesheets="@Login.css">
                <children>
-                  <Text layoutX="217.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adatmódosítás">
+                  <Text layoutX="317.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adatmódosítás">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Text>
-                  <Label layoutX="153.0" layoutY="113.0" text="Születési év:" />
-                  <Label layoutX="153.0" layoutY="141.0" text="Irányítószám:" />
-                  <Label layoutX="153.0" layoutY="169.0" text="Város:" />
-                  <Label layoutX="153.0" layoutY="85.0" text="Születési hely:" />
-                  <Label layoutX="153.0" layoutY="197.0" text="Cím:" />
-                  <Label layoutX="151.0" layoutY="225.0" text="Telefonszám:" />
-                  <Label layoutX="151.0" layoutY="253.0" text="Email cím:" />
-                  <TextField layoutX="301.0" layoutY="81.0" />
-                  <TextField layoutX="301.0" layoutY="109.0" />
-                  <TextField layoutX="301.0" layoutY="137.0" />
-                  <TextField layoutX="301.0" layoutY="165.0" />
-                  <TextField layoutX="301.0" layoutY="193.0" />
-                  <TextField layoutX="301.0" layoutY="221.0" />
-                  <TextField layoutX="301.0" layoutY="249.0" />
+                  <Label layoutX="253.0" layoutY="111.0" text="Születési év:" />
+                  <Label layoutX="253.0" layoutY="139.0" text="Irányítószám:" />
+                  <Label layoutX="253.0" layoutY="167.0" text="Város:" />
+                  <Label layoutX="253.0" layoutY="83.0" text="Születési hely:" />
+                  <Label layoutX="253.0" layoutY="195.0" text="Cím:" />
+                  <Label layoutX="253.0" layoutY="223.0" text="Telefonszám:" />
+                  <Label layoutX="253.0" layoutY="251.0" text="Email cím:" />
+                  <TextField layoutX="401.0" layoutY="79.0" />
+                  <TextField layoutX="401.0" layoutY="107.0" />
+                  <TextField layoutX="401.0" layoutY="135.0" />
+                  <TextField layoutX="401.0" layoutY="163.0" />
+                  <TextField layoutX="401.0" layoutY="191.0" />
+                  <TextField layoutX="401.0" layoutY="219.0" />
+                  <TextField layoutX="401.0" layoutY="247.0" />
+                  <Button layoutX="446.0" layoutY="286.0" mnemonicParsing="false" text="Módosítás" />
+                  <Button layoutX="437.0" layoutY="320.0" mnemonicParsing="false" onAction="#goToAlterData" text="Külön oldalon" />
                </children></AnchorPane>
       </content>
     </Tab>
       <Tab text="Adatlap">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="root" stylesheets="@Login.css">
+               <children>
+                  <Text layoutX="351.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adatlap">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="253.0" layoutY="111.0" text="Születési év:" />
+                  <Label layoutX="253.0" layoutY="139.0" text="Irányítószám:" />
+                  <Label layoutX="253.0" layoutY="167.0" text="Város:" />
+                  <Label layoutX="253.0" layoutY="83.0" text="Születési hely:" />
+                  <Label layoutX="253.0" layoutY="195.0" text="Cím:" />
+                  <Label layoutX="253.0" layoutY="223.0" text="Telefonszám:" />
+                  <Label layoutX="253.0" layoutY="251.0" text="Email cím:" />
+                  
+                  
+               </children></AnchorPane>
          </content>
       </Tab>
   </tabs>
