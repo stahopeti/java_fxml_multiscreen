@@ -7,6 +7,8 @@ package fxml_multiplescreens;
 
 
 import java.sql.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -17,6 +19,14 @@ public class DBConnection {
     private Connection con;
     private Statement st;
     private ResultSet rt;
+    
+    @FXML TextField placeOfBirthDT;
+    @FXML TextField cityDT;
+    @FXML TextField addressDT;
+    @FXML TextField emailAddressDT;
+    @FXML TextField yearOfBirthDT;
+    @FXML TextField phoneNumberDT;
+    @FXML TextField postalNumberDT;
     
     public DBConnection(){
     try{
@@ -29,10 +39,10 @@ public class DBConnection {
     
         System.out.println("Error: "+ ex);
     
+        }
+    
     }
     
-    
-    }
     
     public void addPlayer(String name, String pw){
     try{
@@ -57,16 +67,19 @@ public class DBConnection {
     
     }
     
-    public void getPlayer(){
+    public void getPlayer(String userName){
     try{
     
-        String query = "select * from player_information";
+        String query = "SELECT * FROM player_information WHERE name ='"+ userName+ "'";
         rt = st.executeQuery(query);
         System.out.println("Data:");
         while(rt.next()){
         
-            System.out.println("név: " + rt.getString("name"));
+            System.out.println("\nnév: " + rt.getString("name") + "\nszül.hely: " + rt.getString("placeOfBirth") + "\nszül.év: " + rt.getString("yearOfBirth")
+            + "\nir.szám: " + rt.getString("postalNumber") + "\nváros: " + rt.getString("city"));
         
+            placeOfBirthDT.setText(rt.getString(userName));
+            
         }
     }catch(Exception ex){
     
@@ -77,20 +90,31 @@ public class DBConnection {
     }
     
     
-    public void alterData(String placeOfBirth, String city, String address,
+    public void alterData(String userName, String placeOfBirth, String city, String address,
             String emailAddress, int yearOfBirth, int phoneNumber, int postalNumber){
     
     try{
-    
+        System.out.println("DBCONNECTION: \n");
+        
+         System.out.println(placeOfBirth + "\n" + yearOfBirth + "\n"+ postalNumber
+                + "\n"+ city + "\n"+ address + "\n"
+                + phoneNumber + "\n" + emailAddress );
+        
+        
+       
         rt = null;
-        String query = "UPDATE  player_information"
+       String query = "UPDATE player_information "
                 + "SET placeOfBirth = '"+placeOfBirth+"', city ='" +city + "',"
                 + "address ='"+ address+"', emailAddress = '" + emailAddress+"',"
                 + "yearOfBirth ="+yearOfBirth+",phoneNumber ="+phoneNumber+","
-                + "postalNumber = "+postalNumber;
+                + "postalNumber = "+postalNumber
+                + " WHERE name = '"+userName+"'";
+                
+                ;
         
         st.executeUpdate(query);
-        
+       
+        System.out.println("update maybe executed");
         
     }catch(Exception ex){
     

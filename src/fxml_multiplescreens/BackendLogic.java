@@ -21,7 +21,7 @@ public class BackendLogic {
     public void bckndGetPlayers(){
     
         DBConnection connect = new DBConnection();
-        connect.getPlayer();
+//        connect.getPlayer();
     
     
     }

@@ -8,34 +8,81 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="fxml_multiplescreens.MainMenuScreenController"
->
+<TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_multiplescreens.MainMenuScreenController">
   <tabs>
     <Tab text="Bejelentkezés">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="root" stylesheets="@Login.css">
-               <children>
-                  <Text layoutX="322.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bejelentkezés">
-                     <font>
-                        <Font name="Arial" size="25.0" />
-                     </font>
-                  </Text>
-                  <Label layoutX="249.0" layoutY="129.0" text="Felhasználónév:">
-                     <font>
-                        <Font name="Arial" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="249.0" layoutY="169.0" text="Jelszó:">
-                     <font>
-                        <Font name="Arial" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="403.0" layoutY="128.0" />
-                  <TextField layoutX="403.0" layoutY="168.0" />
-                  <Button layoutX="433.0" layoutY="216.0" mnemonicParsing="false" text="Bejelentkezés" />
-               </children></AnchorPane>
-      </content>
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="root" stylesheets="@Login.css">
+               <bottom>
+                  <HBox prefHeight="29.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Bejelentkezve mint:" />
+                        <Region prefHeight="29.0" prefWidth="33.0" />
+                        <Label fx:id="userNameLabel" />
+                     </children>
+                  </HBox>
+               </bottom>
+               <left>
+                  <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </right>
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Region prefHeight="116.0" prefWidth="400.0" />
+                        <HBox prefHeight="225.0" prefWidth="400.0">
+                           <children>
+                              <GridPane prefHeight="220.0" prefWidth="427.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Felhasználónév:" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Jelszó:" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <TextField fx:id="userName"/>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <PasswordField fx:id="pw"/>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#login" text="Bejelentkezés!" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <Region layoutX="10.0" layoutY="10.0" prefHeight="198.0" prefWidth="400.0" />
+                     </children>
+                  </VBox>
+               </center>
+               <top>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="cim" text="Bejelentkezés" wrappingWidth="155.65185546875" BorderPane.alignment="CENTER" />
+               </top>
+            </BorderPane>
+         </content>
     </Tab>
     <Tab text="Adatmódosítás">
       <content>
@@ -53,14 +100,14 @@
                   <Label layoutX="253.0" layoutY="195.0" text="Cím:" />
                   <Label layoutX="253.0" layoutY="223.0" text="Telefonszám:" />
                   <Label layoutX="253.0" layoutY="251.0" text="Email cím:" />
-                  <TextField layoutX="401.0" layoutY="79.0" />
-                  <TextField layoutX="401.0" layoutY="107.0" />
-                  <TextField layoutX="401.0" layoutY="135.0" />
-                  <TextField layoutX="401.0" layoutY="163.0" />
-                  <TextField layoutX="401.0" layoutY="191.0" />
-                  <TextField layoutX="401.0" layoutY="219.0" />
-                  <TextField layoutX="401.0" layoutY="247.0" />
-                  <Button layoutX="446.0" layoutY="286.0" mnemonicParsing="false" text="Módosítás" />
+                  <TextField fx:id="placeOfBirth" layoutX="401.0" layoutY="79.0" />
+                  <TextField fx:id="yearOfBirth" layoutX="401.0" layoutY="107.0" />
+                  <TextField fx:id="postalNumber" layoutX="401.0" layoutY="135.0" />
+                  <TextField fx:id="city" layoutX="401.0" layoutY="163.0" />
+                  <TextField fx:id="address" layoutX="401.0" layoutY="191.0" />
+                  <TextField fx:id="phoneNumber" layoutX="401.0" layoutY="219.0" />
+                  <TextField fx:id="emailAddress" layoutX="401.0" layoutY="247.0" />
+                  <Button layoutX="446.0" layoutY="286.0" mnemonicParsing="false" onAction="#alterData" text="Módosítás" />
                   <Button layoutX="437.0" layoutY="320.0" mnemonicParsing="false" onAction="#goToAlterData" text="Külön oldalon" />
                </children></AnchorPane>
       </content>
@@ -81,6 +128,13 @@
                   <Label layoutX="253.0" layoutY="195.0" text="Cím:" />
                   <Label layoutX="253.0" layoutY="223.0" text="Telefonszám:" />
                   <Label layoutX="253.0" layoutY="251.0" text="Email cím:" />
+                  <Label fx:id="placeOfBirthDT" layoutX="416.0" layoutY="83.0" />
+                  <Label fx:id="yearOfBirthDT" layoutX="416.0" layoutY="111.0" />
+                  <Label fx:id="postalNumberDT" layoutX="416.0" layoutY="139.0" />
+                  <Label fx:id="cityDT" layoutX="416.0" layoutY="167.0" />
+                  <Label fx:id="addressDT" layoutX="416.0" layoutY="195.0" />
+                  <Label fx:id="phoneNumberDT" layoutX="416.0" layoutY="223.0" />
+                  <Label fx:id="emailAddressDT" layoutX="416.0" layoutY="251.0" />
                   
                   
                </children></AnchorPane>

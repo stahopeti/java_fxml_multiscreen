@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
 /**
  * FXML Controller class
  *
@@ -36,7 +37,6 @@ public class AlterDataScreenController implements Initializable, setParent {
         // TODO
     }    
     
-    
     public void setScreenParent(ManagingScreens screenParent){
     
         myController = screenParent;
@@ -57,13 +57,6 @@ public class AlterDataScreenController implements Initializable, setParent {
     
     }
     
-    private void alterData(){
     
-        DBConnection connect = new DBConnection();
-//        connect.alterData();
-        
-        
-    
-    }
     
 }
