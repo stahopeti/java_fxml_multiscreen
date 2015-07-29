@@ -57,17 +57,23 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <TextField fx:id="userName"/>
+                                          <TextField fx:id="userName" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <PasswordField fx:id="pw"/>
+                                          <PasswordField fx:id="pw" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#login" text="Bejelentkezés!" />
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#login" text="Bejelentkezés!" textAlignment="CENTER" />
+                                                <Region prefHeight="6.0" prefWidth="100.0" />
+                                                <Button mnemonicParsing="false" onAction="#logout" text="Kijelentkezés!" />
+                                             </children>
+                                          </VBox>
                                        </children>
                                     </HBox>
                                  </children>

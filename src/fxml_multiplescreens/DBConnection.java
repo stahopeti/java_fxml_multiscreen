@@ -7,8 +7,6 @@ package fxml_multiplescreens;
 
 
 import java.sql.*;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 
 /**
  *
@@ -20,13 +18,13 @@ public class DBConnection {
     private Statement st;
     private ResultSet rt;
     
-    @FXML TextField placeOfBirthDT;
-    @FXML TextField cityDT;
-    @FXML TextField addressDT;
-    @FXML TextField emailAddressDT;
-    @FXML TextField yearOfBirthDT;
-    @FXML TextField phoneNumberDT;
-    @FXML TextField postalNumberDT;
+    private String placeOfBirthDT;
+    private String cityDT;
+    private String addressDT;
+    private String emailAddressDT;
+    private int yearOfBirthDT;
+    private int phoneNumberDT;
+    private int postalNumberDT;
     
     public DBConnection(){
     try{
@@ -78,7 +76,7 @@ public class DBConnection {
             System.out.println("\nnév: " + rt.getString("name") + "\nszül.hely: " + rt.getString("placeOfBirth") + "\nszül.év: " + rt.getString("yearOfBirth")
             + "\nir.szám: " + rt.getString("postalNumber") + "\nváros: " + rt.getString("city"));
         
-            placeOfBirthDT.setText(rt.getString(userName));
+            
             
         }
     }catch(Exception ex){

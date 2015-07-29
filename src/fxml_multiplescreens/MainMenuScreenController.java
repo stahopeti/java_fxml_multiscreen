@@ -42,6 +42,14 @@ public class MainMenuScreenController implements Initializable, setParent {
     @FXML TextField phoneNumber;
     @FXML TextField postalNumber;
     
+    private String placeOfBirthDTt= "kutya";
+    private String cityDTt;
+    private String addressDTt;
+    private String emailAddressDTt;
+    private String yearOfBirthDTt;
+    private String phoneNumberDTt;
+    private String postalNumberDTt;
+    
     @FXML Label placeOfBirthDT;
     @FXML Label cityDT;
     @FXML Label addressDT;
@@ -99,6 +107,14 @@ public class MainMenuScreenController implements Initializable, setParent {
             phoneNumberDT.setText(rt.getString("phoneNumber"));
             emailAddressDT.setText(rt.getString("emailAddress"));
         
+            placeOfBirthDTt = rt.getString("placeOfBirth");
+            yearOfBirthDTt = rt.getString("yearOfBirth");
+            postalNumberDTt = rt.getString("postalNumber");
+            cityDTt = rt.getString("city");
+            addressDTt = rt.getString("address");
+            phoneNumberDTt = rt.getString("phoneNumber");
+            emailAddressDTt = rt.getString("emailAddress");
+            
         }
         
         con.close();
@@ -110,8 +126,7 @@ public class MainMenuScreenController implements Initializable, setParent {
         }
     
     }
-     
-   
+    
     @Override
     public void setScreenParent(ManagingScreens screenParent) {
     
@@ -130,6 +145,45 @@ public class MainMenuScreenController implements Initializable, setParent {
         
         refreshDataSheet();
         
+        placeOfBirth.setText(placeOfBirthDTt);
+        yearOfBirth.setText(yearOfBirthDTt);
+        postalNumber.setText(postalNumberDTt);
+        city.setText(cityDTt);
+        address.setText(addressDTt);
+        phoneNumber.setText(phoneNumberDTt);
+        emailAddress.setText(emailAddressDTt);
+    }
+    
+    @FXML
+    public void logout(){
+        
+        userName.setText("");
+        pw.setText("");
+        
+        userNameString = null;
+        passwordString = null;
+        
+        refreshDataSheet();
+        
+            placeOfBirthDT.setText("");
+            yearOfBirthDT.setText("");
+            postalNumberDT.setText("");
+            cityDT.setText("");
+            addressDT.setText("");
+            phoneNumberDT.setText("");
+            emailAddressDT.setText("");
+        
+            placeOfBirth.setText("");
+            yearOfBirth.setText("");
+            postalNumber.setText("");
+            city.setText("");
+            address.setText("");
+            phoneNumber.setText("");
+            emailAddress.setText("");
+            
+            userNameLabel.setText("");
+        
+    
     }
     
     @FXML
