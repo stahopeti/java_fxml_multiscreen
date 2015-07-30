@@ -128,12 +128,34 @@ public class DBConnection {
     
         boolean valid_data=false;
         
+        
     try{
-    
+        
+        System.out.println("checkplayername  név: " + name + " jelszó: " + pw);
+        
+        int i = 0;
         rt = null;    
-        String query = "SELECT password FROM player_information WHERE name LIKE '" + name + "' AND password LIKE '" + pw + "'";
+        String query = "SELECT * FROM player_information WHERE name = '" + name + "' AND password = '" + pw + "'";
         rt = st.executeQuery(query);
-        if(rt!=null){
+        
+        
+        
+        while(rt.next()){
+        
+            
+//            System.out.println("checkplayer\nNév: "+ rt.getString("name"+" Jelszó: " + rt.getString("password")));
+            i++;
+        }
+        
+        
+        if(i==0){
+            
+            System.out.println("az RT-ben nincs semmi");
+            
+        }
+        
+        if(i==1){
+            
             valid_data = true;
         }
     

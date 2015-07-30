@@ -28,22 +28,14 @@ public class LoginScreenController implements Initializable, setParent {
         // TODO
     }    
     
-    
     public void setScreenParent(ManagingScreens screenParent){
     
         myController = screenParent;
     
     }
     
-    @FXML
-    private void goToScreen2(ActionEvent e){
-    
-        myController.setScreen(ScreenFramework.screen2ID);
-    
-    }
-    
     @FXML 
-    private void goToMain(ActionEvent e){
+    private void goToAlter(ActionEvent e){
     
         myController.setScreen(ScreenFramework.screen3ID);
     

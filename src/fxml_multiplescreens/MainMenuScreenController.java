@@ -42,7 +42,7 @@ public class MainMenuScreenController implements Initializable, setParent {
     @FXML TextField phoneNumber;
     @FXML TextField postalNumber;
     
-    private String placeOfBirthDTt= "kutya";
+    private String placeOfBirthDTt;
     private String cityDTt;
     private String addressDTt;
     private String emailAddressDTt;
@@ -84,6 +84,7 @@ public class MainMenuScreenController implements Initializable, setParent {
         
         try{
     
+        
         Connection con;
         Statement st;
         ResultSet rt;
@@ -140,6 +141,11 @@ public class MainMenuScreenController implements Initializable, setParent {
         userNameString = userName.getText();
         passwordString = pw.getText();
         
+        
+        BackendLogic bcknd = new BackendLogic();
+        
+        if(bcknd.signInNameCheck(userNameString, passwordString)){
+        
         userNameLabel.setText(userNameString);
         System.out.println("Felhasználónév: "+userNameString+"\nJelszó: "+passwordString);
         
@@ -152,6 +158,9 @@ public class MainMenuScreenController implements Initializable, setParent {
         address.setText(addressDTt);
         phoneNumber.setText(phoneNumberDTt);
         emailAddress.setText(emailAddressDTt);
+        }
+        else{userNameLabel.setText("sikertelen bejelentkezés");}
+        
     }
     
     @FXML

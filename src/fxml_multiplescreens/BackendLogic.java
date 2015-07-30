@@ -33,15 +33,22 @@ public class BackendLogic {
     
     }
     
-    public void signInNameCheck(String name, String pw){
+    public boolean signInNameCheck(String name, String pw){
     
         boolean valid_signin;
+        
         
     DBConnection connect = new DBConnection();
     valid_signin = connect.checkPlayerName(name, pw);
     
-    if(valid_signin) System.out.println("Sikeres bejelentkezés!");
-    else System.out.println("Sikertelen bejelentkezés!");
+    if(valid_signin){ 
+        System.out.println("\nSikeres bejelentkezés!\n\n");
+        return true;
+    
+    }else{
+        System.out.println("\nSikertelen bejelentkezés!\n\n");
+        return false;
+    }
     
     }
 }

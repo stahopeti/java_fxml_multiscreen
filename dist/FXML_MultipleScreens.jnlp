@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="FXML_MultipleScreens.jar" size="554511" download="eager" />
+    <jar href="FXML_MultipleScreens.jar" size="554930" download="eager" />
     <jar href="lib/mysql-connector-java-3.1.14-bin.jar" size="459094" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FXML_MultipleScreens" >
