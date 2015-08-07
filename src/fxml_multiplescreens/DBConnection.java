@@ -42,10 +42,10 @@ public class DBConnection {
     }
     
     
-    public void addPlayer(String name, String pw){
+    public void addUser(String name, String pw){
     try{
     
-        String update = "INSERT INTO player_information(name,password) VALUES ('"+name+"','"+pw+"')";
+        String update = "INSERT INTO player_information(id, name,password) VALUES (12 , '"+name+"' , '"+pw+"')";
         st.executeUpdate(update);
         
         String query = "select * from player_information";
@@ -65,7 +65,7 @@ public class DBConnection {
     
     }
     
-    public void getPlayer(String userName){
+    public void getUser(String userName){
     try{
     
         String query = "SELECT * FROM player_information WHERE name ='"+ userName+ "'";
@@ -124,27 +124,25 @@ public class DBConnection {
     
     }
     
-    public boolean checkPlayerName(String name, String pw){
+    public boolean loginCheck(String name, String pw){
     
         boolean valid_data=false;
-        
-        
+                
     try{
         
         System.out.println("checkplayername  név: " + name + " jelszó: " + pw);
         
         int i = 0;
         rt = null;    
-        String query = "SELECT * FROM player_information WHERE name = '" + name + "' AND password = '" + pw + "'";
+        String query = "SELECT * FROM player_information WHERE name COLLATE Latin1_General_CS = '" + name + 
+                "' AND password COLLATE Latin1_General_CS = '" + pw + "'";
         rt = st.executeQuery(query);
-        
-        
+             
         
         while(rt.next()){
-        
-            
-//            System.out.println("checkplayer\nNév: "+ rt.getString("name"+" Jelszó: " + rt.getString("password")));
+
             i++;
+        
         }
         
         
@@ -157,14 +155,17 @@ public class DBConnection {
         if(i==1){
             
             valid_data = true;
+            
         }
     
     }catch(Exception ex){
         
         System.out.println(ex);
         valid_data = false;
+        
     }
     
     return valid_data;
+    
     }
 }

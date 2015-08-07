@@ -41,6 +41,9 @@ public class LoginScreenController implements Initializable, setParent {
     
     }
     
+    private void login(){}
+    
+    private void registration(){}
     
     
 }

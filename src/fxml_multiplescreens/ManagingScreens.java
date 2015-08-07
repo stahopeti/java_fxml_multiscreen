@@ -5,13 +5,9 @@
  */
 package fxml_multiplescreens;
 
+
 import java.util.HashMap;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.beans.property.DoubleProperty;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -87,7 +83,13 @@ public class ManagingScreens extends StackPane{
     public void cserebere(String name){
     
         getChildren().remove(0);
+                  
         getChildren().add(0, screens.get(name));
+        
+        FadeTransition ft2 = new FadeTransition(Duration.millis(500), getScreen(name));
+        ft2.setFromValue(0);
+        ft2.setToValue(1);
+        ft2.play();
     
     }
     

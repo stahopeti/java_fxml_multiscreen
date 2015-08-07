@@ -26,10 +26,10 @@ public class BackendLogic {
     
     }
    
-    public void bckndAddPlayer(String name, String pw){
+    public void bckndAddUser(String name, String pw){
     
         DBConnection connect = new DBConnection();
-        connect.addPlayer(name, pw);
+        connect.addUser(name, pw);
     
     }
     
@@ -39,7 +39,7 @@ public class BackendLogic {
         
         
     DBConnection connect = new DBConnection();
-    valid_signin = connect.checkPlayerName(name, pw);
+    valid_signin = connect.loginCheck(name, pw);
     
     if(valid_signin){ 
         System.out.println("\nSikeres bejelentkezés!\n\n");
